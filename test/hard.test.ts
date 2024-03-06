@@ -1,6 +1,7 @@
 import { Counter, DoubleCounter } from "../src/12_visibility";
 import { Child, Parent, Polymorphism, sayName } from "../src/15_polymorphism";
 import typeCast from "../src/16_type-cast";
+import RegulerClass from "../src/17_abstract";
 
 describe("Hard", () => {
   describe("Visibility", () => {
@@ -60,5 +61,18 @@ describe("Hard", () => {
     expect("Class parent Oi").toBe(typeCast(new Parent("Oi")));
     expect("Class child P").toBe(typeCast(new Child("P")));
     expect("Class polymorphism U").toBe(typeCast(new Polymorphism("U")));
+  });
+
+  describe("Abstract", () => {
+    const abstract = new RegulerClass(1, "P");
+
+    it("Checking content", () => {
+      expect(1).toBe(abstract.id);
+      expect("P").toBe(abstract.name);
+    });
+
+    it("Checking content", () => {
+      expect("Hello Oi, P").toBe(abstract.hi("Oi"));
+    });
   });
 });
