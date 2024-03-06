@@ -16,4 +16,4 @@ class MethodOverriding extends Hello {
   }
 }
 
-export default MethodOverriding;
+export { Hello, MethodOverriding };

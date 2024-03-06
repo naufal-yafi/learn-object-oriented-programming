@@ -1,4 +1,5 @@
-import MethodOverriding from "../src/10_method_overriding";
+import { MethodOverriding } from "../src/10_method-overriding";
+import SuperMethod from "../src/11_super-method";
 import GetterSetter from "../src/6_getter-setter";
 import { Child, Children, Parent } from "../src/7_inheritance";
 import LoginUser from "../src/8_interface-inheritance";
@@ -73,6 +74,18 @@ describe("Medium", () => {
 
   it("Method Overriding", () => {
     const method = new MethodOverriding("Yafi");
+
+    expect("Yafi").toBe(method.name);
+    expect("Hi Naufal, my name is Yafi, I'm your manager.").toBe(
+      method.sayHi("Naufal"),
+    );
+    expect("Hi Yafi, my name is Yafi, I'm your manager.").toBe(
+      method.sayHi("Yafi"),
+    );
+  });
+
+  it("Method Overriding", () => {
+    const method = new SuperMethod("Yafi");
 
     expect("Yafi").toBe(method.name);
     expect("Hi Naufal, my name is Yafi, I'm your manager.").toBe(
