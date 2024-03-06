@@ -1,5 +1,6 @@
 import EmptyClass from "../src/class";
 import Customer from "../src/contructor";
+import DefaultValue from "../src/default-value";
 import People from "../src/properties";
 
 describe("Basic", () => {
@@ -29,5 +30,13 @@ describe("Basic", () => {
 
     people2.age = 80;
     expect(people2.age).toBe(80);
+  });
+
+  it("Default Value", () => {
+    const typeName = new DefaultValue(1);
+
+    expect(typeName.name).toBe("Type your name");
+    typeName.name = "Naufal";
+    expect(typeName.name).toBe("Naufal");
   });
 });
