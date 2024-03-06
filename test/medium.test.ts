@@ -1,5 +1,6 @@
 import GetterSetter from "../src/6_getter-setter";
 import { Child, Children, Parent } from "../src/7_inheritance";
+import LoginUser from "../src/8_interface-inheritance";
 
 describe("Medium", () => {
   describe("Getter & Setter", () => {
@@ -35,6 +36,29 @@ describe("Medium", () => {
 
     it("Checking content children", () => {
       expect("Yafi").toBe(children.name);
+    });
+  });
+
+  describe("Interface Inheritance", () => {
+    it("Login success", () => {
+      const login = new LoginUser("Naufal", "admin123");
+      expect("Naufal").toBe(login.name);
+      expect("admin123").toBe(login.password);
+      expect(true).toBe(login.Login("Naufal", "admin123"));
+    });
+
+    it("Login failed", () => {
+      const login = new LoginUser("Naufal", "");
+      expect("Naufal").toBe(login.name);
+      expect("").toBe(login.password);
+      expect(false).toBe(login.Login("Naufal", ""));
+    });
+
+    it("Handling empty field", () => {
+      const login = new LoginUser("", "");
+      expect("").toBe(login.name);
+      expect("").toBe(login.password);
+      expect(false).toBe(login.Login("", ""));
     });
   });
 });
