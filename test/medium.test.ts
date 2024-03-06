@@ -1,6 +1,7 @@
 import GetterSetter from "../src/6_getter-setter";
 import { Child, Children, Parent } from "../src/7_inheritance";
 import LoginUser from "../src/8_interface-inheritance";
+import Health from "../src/9_super-constructor";
 
 describe("Medium", () => {
   describe("Getter & Setter", () => {
@@ -60,5 +61,12 @@ describe("Medium", () => {
       expect("").toBe(login.password);
       expect(false).toBe(login.Login("", ""));
     });
+  });
+
+  it("Super Constructor", () => {
+    const person = new Health("Naufal", 55);
+
+    expect("Naufal").toBe(person.name);
+    expect(55).toBe(person.protein);
   });
 });
