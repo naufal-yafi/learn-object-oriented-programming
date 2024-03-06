@@ -1,3 +1,9 @@
+/*
+  Getter setter ini bisa digunakan untuk memvalidasi setiap properti yang akan diubah.
+
+  Seperti contoh dibawah property name tidak akan berubah ketika menerima parameter string kosong.
+*/
+
 class GetterSetter {
   _name?: string;
 
