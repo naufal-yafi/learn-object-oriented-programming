@@ -1,8 +1,8 @@
-import EmptyClass from "../src/class";
-import Customer from "../src/contructor";
-import DefaultValue from "../src/default-value";
-import Method from "../src/method";
-import People from "../src/properties";
+import EmptyClass from "../src/1_class";
+import Customer from "../src/2_contructor";
+import DefaultValue from "../src/4_default-value";
+import Method from "../src/5_method";
+import People from "../src/3_properties";
 
 describe("Basic", () => {
   it("Intance new empty class", () => {
