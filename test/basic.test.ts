@@ -1,3 +1,4 @@
+import ParameterProperties from "../src/13_parameter-properties";
 import EmptyClass from "../src/1_class";
 import Customer from "../src/2_contructor";
 import People from "../src/3_properties";
@@ -59,5 +60,21 @@ describe("Basic", () => {
     expect(method.name).toBe("Naufal");
 
     method.sayHello("Naufal");
+  });
+
+  describe("Parameter Properties", () => {
+    const person = new ParameterProperties("Yafi");
+
+    it("Check content", () => {
+      expect("Yafi").toBe(person.name);
+    });
+
+    it("Change name", () => {
+      person.name = "Naufal";
+    });
+
+    it("Check content change", () => {
+      expect("Naufal").toBe(person.name);
+    });
   });
 });
