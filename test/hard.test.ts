@@ -1,5 +1,6 @@
 import { Counter, DoubleCounter } from "../src/12_visibility";
 import { Child, Parent, Polymorphism, sayName } from "../src/15_polymorphism";
+import typeCast from "../src/16_type-cast";
 
 describe("Hard", () => {
   describe("Visibility", () => {
@@ -53,5 +54,11 @@ describe("Hard", () => {
       expect("Hello Naufal").toBe(sayName(new Parent("Naufal")));
       expect("Hello Yafi").toBe(sayName(new Parent("Yafi")));
     });
+  });
+
+  it("Type Cast", () => {
+    expect("Class parent Oi").toBe(typeCast(new Parent("Oi")));
+    expect("Class child P").toBe(typeCast(new Child("P")));
+    expect("Class polymorphism U").toBe(typeCast(new Polymorphism("U")));
   });
 });
