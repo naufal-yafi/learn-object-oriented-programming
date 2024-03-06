@@ -1,4 +1,5 @@
 import ParameterProperties from "../src/13_parameter-properties";
+import { Instanceof, Operator } from "../src/14_operator-instanceof";
 import EmptyClass from "../src/1_class";
 import Customer from "../src/2_contructor";
 import People from "../src/3_properties";
@@ -75,6 +76,24 @@ describe("Basic", () => {
 
     it("Check content change", () => {
       expect("Naufal").toBe(person.name);
+    });
+  });
+
+  describe("Operator Instanceof", () => {
+    const operator = new Operator();
+    const instance = new Instanceof();
+
+    it("Typeof", () => {
+      expect("object").toBe(typeof operator);
+      expect("object").toBe(typeof instance);
+    });
+
+    it("Typeof", () => {
+      expect(operator instanceof Operator).toBe(true);
+      expect(operator instanceof Instanceof).toBe(false);
+
+      expect(instance instanceof Instanceof).toBe(true);
+      expect(instance instanceof Operator).toBe(false);
     });
   });
 });
