@@ -1,4 +1,5 @@
 import GetterSetter from "../src/6_getter-setter";
+import { Child, Children, Parent } from "../src/7_inheritance";
 
 describe("Medium", () => {
   describe("Getter & Setter", () => {
@@ -16,6 +17,24 @@ describe("Medium", () => {
     it('Name can\'t change after field name empty string("")', () => {
       getterSetter.name = "";
       expect("Naufal").toBe(getterSetter.name);
+    });
+  });
+
+  describe("Inheritance", () => {
+    const parent = new Parent("Muhammad");
+    const child = new Child("Naufal");
+    const children = new Children("Yafi");
+
+    it("Checking content parent", () => {
+      expect("Muhammad").toBe(parent.name);
+    });
+
+    it("Checking content child", () => {
+      expect("Naufal").toBe(child.name);
+    });
+
+    it("Checking content children", () => {
+      expect("Yafi").toBe(children.name);
     });
   });
 });
