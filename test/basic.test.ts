@@ -1,6 +1,7 @@
 import EmptyClass from "../src/class";
 import Customer from "../src/contructor";
 import DefaultValue from "../src/default-value";
+import Method from "../src/method";
 import People from "../src/properties";
 
 describe("Basic", () => {
@@ -38,5 +39,16 @@ describe("Basic", () => {
     expect(typeName.name).toBe("Type your name");
     typeName.name = "Naufal";
     expect(typeName.name).toBe("Naufal");
+  });
+
+  it("Method", () => {
+    const method = new Method(1, "Naufal");
+
+    method.sayHello("Yafi");
+
+    expect(method.id).toBe(1);
+    expect(method.name).toBe("Naufal");
+
+    method.sayHello("Naufal");
   });
 });
