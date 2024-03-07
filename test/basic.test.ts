@@ -2,6 +2,7 @@ import ParameterProperties from "../src/13_parameter-properties";
 import { Instanceof, Operator } from "../src/14_operator-instanceof";
 import Static from "../src/18_static";
 import EmptyClass from "../src/1_class";
+import Namespace from "../src/20_namespace";
 import Customer from "../src/2_contructor";
 import People from "../src/3_properties";
 import DefaultValue from "../src/4_default-value";
@@ -108,6 +109,16 @@ describe("Basic", () => {
       expect("Naufal").toBe(Static.NAME);
       Static.updateAge(21);
       expect(21).toBe(Static.AGE);
+    });
+  });
+
+  describe("Namespace", () => {
+    it("Checking content", () => {
+      expect("Naufal").toBe(Namespace.NAME);
+    });
+
+    it("Function", () => {
+      expect(5).toBe(Namespace.sum(2, 3));
     });
   });
 });
