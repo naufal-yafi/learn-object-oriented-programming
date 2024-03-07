@@ -2,6 +2,7 @@ import { Counter, DoubleCounter } from "../src/12_visibility";
 import { Child, Parent, Polymorphism, sayName } from "../src/15_polymorphism";
 import typeCast from "../src/16_type-cast";
 import RegulerClass from "../src/17_abstract";
+import tryCatch from "../src/19_error-handling";
 
 describe("Hard", () => {
   describe("Visibility", () => {
@@ -73,6 +74,12 @@ describe("Hard", () => {
 
     it("Checking content", () => {
       expect("Hello Oi, P").toBe(abstract.hi("Oi"));
+    });
+  });
+
+  describe("Error Handling", () => {
+    it("Error", () => {
+      expect(false).toBe(tryCatch(-1));
     });
   });
 });
