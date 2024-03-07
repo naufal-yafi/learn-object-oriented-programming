@@ -1,5 +1,6 @@
 import ParameterProperties from "../src/13_parameter-properties";
 import { Instanceof, Operator } from "../src/14_operator-instanceof";
+import Static from "../src/18_static";
 import EmptyClass from "../src/1_class";
 import Customer from "../src/2_contructor";
 import People from "../src/3_properties";
@@ -94,6 +95,19 @@ describe("Basic", () => {
 
       expect(instance instanceof Instanceof).toBe(true);
       expect(instance instanceof Operator).toBe(false);
+    });
+  });
+
+  describe("Static", () => {
+    it("Checking content", () => {
+      expect("Naufal").toBe(Static.NAME);
+      expect(18).toBe(Static.AGE);
+    });
+
+    it("Update age", () => {
+      expect("Naufal").toBe(Static.NAME);
+      Static.updateAge(21);
+      expect(21).toBe(Static.AGE);
     });
   });
 });
